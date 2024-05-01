@@ -6,6 +6,9 @@ angle = 22.5
 
 */
 
+const MAX_NUMBER_OF_CLICKS = 6
+var numberOfClicks = 0
+
 var angle;
 var axiom = "F"
 var sentence = axiom
@@ -18,9 +21,9 @@ rules[0] = {
 }
   
 function generate(){
-  len *= 0.5
+  len *= 0.6
   var nextSentence = ""
-  for(var i=0; i<sentence.lenght; i++){
+  for(var i=0; i<sentence.length; i++){
     var current = sentence.charAt(i)
     var found = false
     for(var j=0; j<rules.length; j++){
@@ -48,7 +51,7 @@ function turtle(){
   for(var i=0; i<sentence.length; i++){
     var current = sentence.charAt(i)
     
-    /*
+    
     
     switch (current){
       case "F":
@@ -69,8 +72,8 @@ function turtle(){
         break
     }
     
-    */
     
+    /*
     if (current == "F") {
       line(0, 0, 0, -len);
       translate(0, -len);
@@ -83,27 +86,29 @@ function turtle(){
     } else if (current == "]") {
       pop();
     }
-    
+    */
   }
 }
 
 
 function setup() {
-  createCanvas(400, 400);
-  angle = radians(22.5)
+  //createCanvas(400, 400);
+  createCanvas(windowWidth, windowHeight)
+  angle = radians(25)
   background(51);
   createP(axiom)
   turtle()
   var button = createButton("generate")
   button.mousePressed(generate)
+  mousePressed()
 }
  
-/*
+
 
 function mousePressed(){
-  generate()
-  //turtle()
+  if(numberOfClicks < MAX_NUMBER_OF_CLICKS){
+    generate()
+    numberOfClicks++
+  }
 }
-
-*/
 

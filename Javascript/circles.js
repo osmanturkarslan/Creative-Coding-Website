@@ -1,7 +1,8 @@
 const CIRCLE_ARR = [];
-const POINT_ARR = []
+const POINT_ARR = [];
 const POINT_SIZE = 15;
-const MAX_RADIUS = 300;
+const MIN_RADIUS = 20;
+const MAX_RADIUS = 200;
 
 // ####################      POINT     #######################################
 class Point {
@@ -41,10 +42,20 @@ class Point {
     return min(minX, minY);
   }
 
-  static drawAll(){
-    POINT_ARR.forEach(p=>{
+  static drawAll() {
+    POINT_ARR.forEach((p) => {
       p.draw();
-    })
+    });
+  }
+  calcMinDistance(){
+    let minDist = this.calcWallDist()
+    for(const c of CIRCLE_ARR){
+      let dist = c.calcDist(this);
+      if(dist<minDist){
+        minDist = dist;
+      }
+    }
+    return minDist;
   }
 }
 // ########################    COLOR     #####################################
@@ -92,13 +103,9 @@ class Circle {
     push();
     strokeWeight(0);
     this.color.setFill();
-    circle(this.center.x, this.center.y, this.radius *2);
+    circle(this.center.x, this.center.y, this.radius * 2);
     pop();
   }
-
-  // calcArea() {
-  //   return this.radius * this.radius * Math.PI;
-  // }
 
   static createRandom() {
     let centerPoint = Point.createRandom();
@@ -106,17 +113,9 @@ class Circle {
     return new Circle(centerPoint, random(distanceToWall));
   }
 
-  // static calcTotalArea() {
-  //   let sum = 0;
-  //   CIRCLE_ARR.forEach((c) => {
-  //     sum += c.calcArea();
-  //   });
-  //   return sum;
-  // }
-  
   static drawAll() {
-    CIRCLE_ARR.forEach((element) => {
-      element.draw();
+    CIRCLE_ARR.forEach((c) => {
+      c.draw();
     });
   }
 
@@ -125,28 +124,44 @@ class Circle {
       return;
     }
     let c;
+    let p;
+    let minDist;
     do {
-        c = Circle.createRandom()
-    }while (c.checkForOverlappingCircles());
+      // Version one
+      // c = Circle.createRandom();
+      // } while (c.checkForOverlappingCircles());
+      // c = new Circle(p,minDist) 
+
+
+      //version two
+      p = Point.createRandom();
+      minDist = p.calcMinDistance()
+    } while (minDist < MIN_RADIUS);
+    c = new Circle(p,random(MIN_RADIUS,min(minDist,MAX_RADIUS)))
+
     CIRCLE_ARR.push(c);
   }
 
-  calcDistance(other) {
+  calcDist(other) {
     if (other instanceof Point)
       return this.center.calcDist(other) - this.radius;
     if (other instanceof Circle)
-      return (this.center.calcDist(other.center) - this.radius - other.radius);
+      return this.center.calcDist(other.center) - this.radius - other.radius;
     return NaN;
   }
 
-  checkForOverlappingCircles(){
-    CIRCLE_ARR.forEach(c=>{
-
-      let dist = this.calcDistance(c);
-      if(dist<0)
+  checkForOverlappingCircles() {
+    for (const c of CIRCLE_ARR) {
+      let dist = this.calcDist(c);
+      if (dist < 0) {
         return true;
-      });
-      return false
+      }
+    }
+    return false;
+  }
+
+  static deleteLast(){
+    CIRCLE_ARR.pop()
   }
 }
 
@@ -155,26 +170,21 @@ class Circle {
 function setup() {
   createCanvas(windowWidth, windowHeight);
   background(220);
-  frameRate(5);
-
-  // let c1 = Circle.createRandom();
-  // let p2 = Point.createRandom();
-  // CIRCLE_ARR.push(c1);
-  // POINT_ARR.push(p2);
-
-  // c1.draw();
-  // c1.center.draw();
-  // p2.draw();
-
-  // let distance = c1.center.calcDist(p2);
-  // console.log(distance);
-
-  // c1.center.drawLine(p2);
+  frameRate(120);
 }
 
 // #########################     DRAW       #####################################
-function draw() {
-  Circle.tryToCreateNewCircle();
-  Circle.drawAll();
-  // Point.drawAll()
+// function draw() {
+//   Circle.tryToCreateNewCircle(150);
+//   Circle.drawAll();
+// }
+
+function mouseWheel(event){
+  clear()
+  if(event.delta < 0){
+    Circle.tryToCreateNewCircle(15614634136123)
+  }else{
+    Circle.deleteLast()
+  }
+  Circle.drawAll()
 }
