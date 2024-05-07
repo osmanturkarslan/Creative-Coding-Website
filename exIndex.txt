@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="p5/p5.min.js"></script>
+
+</head>
+
+<body>
+    <h1>Welcome To Osman's Art Gallery</h1>
+    <a href="Pages/random_lines.html">Random Lines</a><br>
+    <a href="Pages/random_dots.html">Random Dots</a><br>
+    <a href="Pages/random_labyrinth.html">Random Labyrinth</a><br>
+    <a href="Pages/random_square.html">Random Square</a><br>
+    <a href="Pages/random_ellipse.html">Random Ellipse</a><br>
+    <a href="Pages/img_test.html">Image Test</a><br>
+    <a href="Pages/curve_vertex.html">Curve Vertex</a><br>
+    <a href="Pages/circles.html">Circles</a><br>
+    <a href="Pages/foto_filter.html">Foto Filter</a><br>
+    <a href="Pages/l_system_tree.html">L System Tree</a><br>
+    <a href="Pages/dragon_curve.html">Dragon Curve</a><br>
+</body>
+
+</html>
+
+*********************************************************************************
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Osman's Art Gallery</title>
+    
+    <!-- Modernize edilmiş ve optimize edilmiş CSS bağlantıları -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../Css/register.css"> <!-- Mevcut CSS'yi tutar -->
+
+    <!-- Modernize edilmiş ve optimize edilmiş JavaScript bağlantıları -->
+    <script src="https://cdn.jsdelivr.net/npm/p5"></script> <!-- P5.js sanat için -->
+    <script src="../Js/register.js"></script> <!-- Diğer JS dosyası -->
+
+    <!-- Aşağıdaki script, SEO ve analiz için yararlıdır -->
+    <!-- <meta name="description" content="Açıklayıcı metin ve SEO için meta açıklaması"> -->
+</head>
+<body>
+    <div class="container vh-100 d-flex justify-content-center align-items-center">
+        <div class="col-8 d-flex flex-column align-items-center"> <!-- Genişlik artırıldı -->
+            <h1 class="text-center">Osman's Art Gallery</h1> <!-- Başlık açıklayıcı hale getirildi -->
+
+            <!-- Navigasyon menüsü genişletildi ve düzenlendi -->
+            <nav>
+                <ul class="list-unstyled">
+                    <li><a href="Pages/random_lines.html">Random Lines</a></li>
+                    <li><a href="Pages/random_dots.html">Random Dots</a></li>
+                    <li><a href="Pages/random_labyrinth.html">Random Labyrinth</a></li>
+                    <li><a href="Pages/random_square.html">Random Square</a></li>
+                    <li><a href="Pages/random_ellipse.html">Random Ellipse</a></li>
+                    <li><a href="Pages/img_test.html">Image Test</a></li>
+                    <li><a href="Pages/curve_vertex.html">Curve Vertex</a></li>
+                    <li><a href="Pages/circles.html">Circles</a></li>
+                    <li><a href="Pages/foto_filter.html">Foto Filter</a></li>
+                    <li><a href="Pages/l_system_tree.html">L System Tree</a></li>
+                    <li><a href="Pages/dragon_curve.html">Dragon Curve</a></li>
+                </ul>
+            </nav>
+
+            <!-- Alt bilgi ekleyerek daha profesyonel bir görünüm sağlanır -->
+            <footer class="mt-4">
+                <p class="text-muted text-center">&copy; 2024 Osman's Art Gallery. All rights reserved.</p>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Geliştirilmiş JavaScript bağlantıları -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

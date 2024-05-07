@@ -3,28 +3,56 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Osman's Art Gallery</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <!-- <script src="https://cdn.jsdelivr.net/npm/p5/p5.min.js"></script> --> <!-- Sanat için P5.js -->
     <script src="p5/p5.min.js"></script>
-
 </head>
 
 <body>
-    <h1>Welcome To Osman's Art Gallery</h1>
-    <a href="Pages/random_lines.html">Random Lines</a><br>
-    <a href="Pages/random_dots.html">Random Dots</a><br>
-    <a href="Pages/random_labyrinth.html">Random Labyrinth</a><br>
-    <a href="Pages/random_square.html">Random Square</a><br>
-    <a href="Pages/random_ellipse.html">Random Ellipse</a><br>
-    <a href="Pages/img_test.html">Image Test</a><br>
-    <a href="Pages/curve_vertex.html">Curve Vertex</a><br>
-    <a href="Pages/circles.html">Circles</a><br>
-    <a href="Pages/foto_filter.html">Foto Filter</a><br>
-    <a href="Pages/l_system_tree.html">L System Tree</a><br>
-    <a href="Pages/dragon_curve.html">Dragon Curve</a><br>
+    <header class="bg-dark text-white text-center py-4"> <!-- Şık ve koyu renkli bir başlık -->
+        <h1>Osman's Art Gallery</h1>
+        <p>Discover the World of Digital Art</p> <!-- Açıklayıcı bir alt başlık -->
+    </header>
 
+    <nav class="navbar navbar-expand-lg navbar-light bg-light"> <!-- Navigasyon menüsü -->
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Home</a> <!-- Ana sayfaya bağlantı -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav"> <!-- Responsive menü -->
+                <ul class="navbar-nav"> <!-- Menü öğeleri -->
+                    <li class="nav-item"><a class="nav-link" href="Pages/random_lines.html">Random Lines</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Pages/random_dots.html">Random Dots</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Pages/random_labyrinth.html">Random Labyrinth</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="Pages/random_square.html">Random Square</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Pages/random_ellipse.html">Random Ellipse</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Pages/img_test.html">Image Test</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Pages/curve_vertex.html">Curve Vertex</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Pages/circles.html">Circles</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Pages/foto_filter.html">Foto Filter</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Pages/l_system_tree.html">L System Tree</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Pages/dragon_curve.html">Dragon Curve</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
+    <div class="container mt-4"> <!-- İçerik alanı -->
+        <h2>Explore the Art</h2>
+        <p>Choose from the links above to explore different digital art styles and interactive experiences.</p>
+        <!-- Basit açıklayıcı metin -->
+    </div>
 
+    <footer class="bg-dark text-white text-center py-3"> <!-- Şık bir alt bilgi -->
+        <p>&copy; 2024 Osman's Art Gallery. All rights reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

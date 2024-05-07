@@ -18,3 +18,7 @@ function setup() {
         }
     }
 }
+
+function mousePressed() {
+    setup()
+}

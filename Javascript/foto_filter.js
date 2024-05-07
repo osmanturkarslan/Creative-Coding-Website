@@ -1,10 +1,10 @@
 let img;
 
 function preload() {
-    // img = loadImage("https://www.hsv.com.au/images/see/camaro/camaro-zl1-garnet-red-tintcoat.jpg")
-    // img = loadImage("https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.hsv.com.au%2Fsee%2Fcamaro%2F&psig=AOvVaw3_mVapXjzjZxbQ4MS0A_11&ust=1714309907391000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCMipium84oUDFQAAAAAdAAAAABAE")
-    // img = loadImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPRlNqO-0wJ0622FKFxiBnnps_PV3OEZkjcg&s")
-     img = loadImage("../Images/camaro-zl1-red.jpg")
+    //img = loadImage("https://www.hsv.com.au/images/see/camaro/camaro-zl1-garnet-red-tintcoat.jpg")
+    //img = loadImage("https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.hsv.com.au%2Fsee%2Fcamaro%2F&psig=AOvVaw3_mVapXjzjZxbQ4MS0A_11&ust=1714309907391000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCMipium84oUDFQAAAAAdAAAAABAE")
+    //img = loadImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPRlNqO-0wJ0622FKFxiBnnps_PV3OEZkjcg&s")
+    img = loadImage("../Images/camaro-zl1-red.jpg")
 }
 
 function setup() {
@@ -20,7 +20,12 @@ function setup() {
     //filter(BLUR, 3)
     //filter(DILATE)
     //filter(ERODE)
-    filter(BLUR, 3, false)
+    //filter(BLUR, 3, false)
+}
+
+function mousePressed() {
+    image(img, 0, 0, windowWidth, windowHeight)
+    filter(random([INVERT, GRAY, THRESHOLD, OPAQUE, POSTERIZE, BLUR, DILATE, ERODE]))
 }
 
 function applyFilter() {
@@ -31,7 +36,7 @@ function applyFilter() {
         let g = pixels[i + 1];
         let b = pixels[i + 2];
 
-        pixels[i] = r + 50
+        //pixels[i] = r + 255
     }
 
     updatePixels()
