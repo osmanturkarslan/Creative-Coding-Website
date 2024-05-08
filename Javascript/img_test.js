@@ -49,16 +49,17 @@ function mouseWheel(event) {
 //
 //
 //  for (let i = 0; i < img2.pixels.length; i += 4) {
-//    let red = img2.pixels[i + 0]
+//    let red =   img2.pixels[i + 0]
 //    let green = img2.pixels[i + 1]
-//    let blue = img2.pixels[i + 2]
+//    let blue =  img2.pixels[i + 2]
 //    let alpha = img2.pixels[i + 3]
 //
 //    img2.pixels[i + 0] = red
 //    img2.pixels[i + 1] = green
 //    img2.pixels[i + 2] = green
-//    //img2.pixels[i + 3] = alfa
+//    //img2.pixels[i + 3] = alpha
 //  }
+
 //
 //  //mousePressed()
 //  /*
