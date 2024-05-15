@@ -2,6 +2,7 @@
     "recommendations": [
         "zsakowitz.p5-resources",
         "samplavigne.p5-vscode",
-        "ritwickdey.liveserver"
+        "ritwickdey.liveserver",
+        "aaron-bond.better-comments"
     ]
 }
