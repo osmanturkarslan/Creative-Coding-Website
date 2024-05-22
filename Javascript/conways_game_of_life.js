@@ -189,11 +189,11 @@ function keyPressed() {
   switch (keyCode) {
     case 32:
     case 13:
-     if(running == true){
-      running = false;
-     }else{
-      running = true;
-     }
+    //  if(running == true){
+    //   running = false;
+    //  }else{
+    //   running = true;
+    //  }
 
      running = !running
       break;
