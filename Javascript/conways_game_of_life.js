@@ -23,9 +23,7 @@ function draw() {
 
 function createSquareBoard() {
   for (
-    let x = 1;
-    x + BOARD_SQUARE_SIZE < windowWidth - 1;
-    x += BOARD_SQUARE_SIZE + 1
+    let x = 1; x + BOARD_SQUARE_SIZE < windowWidth - 1; x += BOARD_SQUARE_SIZE + 1
   ) {
     BOARD_SQUARE_ARR_2D.push([]);
     SQUARE_ARR_2D.push([]);
@@ -89,7 +87,6 @@ function checkNeighbourAlive() {
   let countAliveNeighbour = 0;
   for (let x = 0; x < BOARD_SQUARE_ARR_2D.length; x++) {
     for (let y = 0; y < BOARD_SQUARE_ARR_2D[x].length; y++) {
-      //! FIX Index out of Bounds like index = -1 or index = arr.length
 
       if (x - 1 >= 0 && y - 1 >= 0 && BOARD_SQUARE_ARR_2D[x - 1][y - 1].alive) {
         countAliveNeighbour++;
